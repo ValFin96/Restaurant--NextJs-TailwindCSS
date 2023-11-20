@@ -1,30 +1,27 @@
-'use client'
-
 import React from 'react';
 import Link from 'next/link';
-import { FiChevronRight } from "react-icons/fi";
+import { FiChevronRight, FiInstagram, FiFacebook } from "react-icons/fi";
 import limaBlack from '../../public/images/Lima-Logo-Black.webp';
 import Image from 'next/image';
 
 const Footer = () => {
-    function handleClickInsta() {
-        window.open('https://www.instagram.com/limanikkei_sydney/');
-    }
-
-    function handleClickFb() {
-        window.open('https://www.facebook.com/limanikkei.sydney');
-    }
 
     return (
-        <footer>
+        <footer className='bg-primary'>
             <div className='flex items-center justify-center'>
                 <hr className=' w-[90vw] border-t mt-4 opacity-20 border-primaryDark' />
             </div>
             <div className='p-8 text-gray-200'>
 
             <Link href='/' >
-            <Image src={limaBlack} alt='Lima Peruvian Japanese Restaurant in Dawes Point' width={200} height={200} priority={true} className='sm:w-[170px] mx-auto mb-[2rem]' />
+            <Image src={limaBlack} alt='Lima Peruvian Japanese Restaurant in Dawes Point' width={200} height={200} priority={true} className='sm:w-[170px] mx-auto ' />
         </Link>
+        <div className='flex space-x-3 items-center justify-center mb-[2rem] mt-4 text-primaryDark'>
+        <Link href='https://www.instagram.com/limanikkei_sydney/' target='_blank' className='flex text-sm'><FiInstagram size={'1.2em'} className='mr-1'/>Instagram</Link>
+        <Link href='https://www.facebook.com/limanikkei.sydney' target='_blank' className='flex text-sm'><FiFacebook size={'1.2em'} className='mr-0.4'/>Facebook</Link>
+        
+        
+      </div>
                 <div className='max-w-7xl mx-auto'>
                     <div className='grid grid-cols-3 xs:grid-cols-1 lg:grid-cols-3 gap-3 overflow-hidden text-primaryDark'>
                         <div className='mb-5'>

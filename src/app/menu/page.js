@@ -1,48 +1,51 @@
 import React from 'react'
 import Image from 'next/image'
-import salmon from '../../../public/images/salmon.webp'
 import lobster from '../../../public/images/lobster.webp'
 import Link from 'next/link'
+import MenuImage1 from '@/components/MenuImage1'
 
 
 const Menu = () => {
 
-  
   return (
     <div>
-    <div className='relative'>
-      <Image
-      src={salmon}
-      alt='salmon'
-      // have a dark overlay on the image
-      className='w-full h-full object-cover object-center'
-      />
-{/* Have the below div on top of the image in the center */}
-      <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-primary text-white'>MENU</div>
-    </div>
-      <div className='flex flex-col items-center justify-center space-y-5 text-primaryDark'>
-      <h2>A La Carte</h2>
-      <p>Available both lunch and dinner</p>
-      <Link href='/'>Click for sample a la carte menu</Link>
+      <MenuImage1 />
+      <div className='flex flex-col items-center justify-center w-full py-5 text-primaryDark bg-primary'>
+        <div className='mb-5 text-center'>
+        <h2 className='text-lg mb-2'>A La Carte</h2>
+        <p>Available both lunch and dinner</p>
+        <Link href='/' className='underline underline-offset-2'>Click for sample a la carte menu</Link>
+        </div>
 
-      <h2>Nikkei Degustation Menu $75pp</h2>
-      <p>Available both lunch and dinner</p>
-      <Link href='/'>Sample Tasting Menu</Link>
+        <div className='mb-5 text-center'>
+        <h2 className='text-lg mb-2'>Pre-theatre menu $75pp</h2>
+        <p>Available between 5-6pm</p>
+        <Link href='/' className='underline underline-offset-2'>Sample Tasting Menu</Link>
+        </div>
 
-      <h2>Tokyo Degustation Menu $105pp</h2>
-      <p>Available both lunch and dinner</p>
-      <Link href='/'>Sample Tasting Menu</Link>
+        <div className='mb-5 text-center'>
+        <h2 className='text-lg mb-2'>Nikkei Degustation Menu $75pp</h2>
+        <p>Available both lunch and dinner</p>
+        <Link href='/' className='underline underline-offset-2'>Sample Tasting Menu</Link>
+        </div>
 
-      <p>Wine pairings are available for tasting menus</p>
+        <div className='mb-5 text-center'>
+        <h2 className='text-lg mb-2'>Tokyo Degustation Menu $105pp</h2>
+        <p>Available both lunch and dinner</p>
+        <Link href='/' className='underline underline-offset-2'>Sample Tasting Menu</Link>
+        </div>
 
-      <p>* Menu is subject to change</p>
+        <p className='mb-5 text-center'>Wine pairings are available for tasting menus</p>
 
-      <Image
-      src={lobster}
-      alt='lobster'
-      // have a dark overlay on the image
-      className='w-full h-full object-cover object-center'
-      />
+        <p className='mb-5 text-center text-sm'>* Menu is subject to change</p>
+        <div
+        >
+          <Image
+            src={lobster}
+            alt='lobster'
+            className='w-full h-full object-cover object-center'
+          />
+        </div>
       </div>
     </div>
   )
