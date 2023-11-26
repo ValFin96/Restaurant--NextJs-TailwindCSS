@@ -2,13 +2,26 @@ import React from 'react'
 import Image from 'next/image'
 import lobster from '../../../public/images/lobster.webp'
 import Link from 'next/link'
-import MenuImage1 from '@/components/MenuImage1'
+import dynamic from 'next/dynamic'
+const MenuImage1 = dynamic(()=> import ('@/components/MenuImage1'),
+{
+loading:()=><p>…Loading</p>
+})
+const MenuImage2 = dynamic(()=> import ('@/components/MenuImage2'),
+{
+  loading:()=><p>…Loading</p>,ssr:false
+  })
+const BookNow = dynamic(()=> import ('@/components/BookNow'),
+{
+  loading:()=><p>…Loading</p>
+  })
 
+// const Header = dynamic(()=>import("../components/header"))
 
 const Menu = () => {
 
   return (
-    <div>
+    <div className='overflow-hidden'>
       <MenuImage1 />
       <div className='flex flex-col items-center justify-center w-full py-5 text-primaryDark bg-primary'>
         <div className='mb-5 text-center'>
@@ -37,16 +50,10 @@ const Menu = () => {
 
         <p className='mb-5 text-center'>Wine pairings are available for tasting menus</p>
 
-        <p className='mb-5 text-center text-sm'>* Menu is subject to change</p>
-        <div
-        >
-          <Image
-            src={lobster}
-            alt='lobster'
-            className='w-full h-full object-cover object-center'
-          />
-        </div>
+        <p className=' text-center text-sm'>* Menu is subject to change</p>
+        <BookNow/>
       </div>
+      <MenuImage2 />
     </div>
   )
 }

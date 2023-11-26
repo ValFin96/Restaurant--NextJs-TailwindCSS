@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 
-const CustomLink = ({ href, title, className = '' }) => {
+const CustomLink = ({ href, title, className = '', prefetch }) => {
     const router = useRouter();
 
     return (
-        <Link href={href} className={`${className} relative group`}>
+        <Link href={href} prefetch={prefetch} className={`${className} relative group`}>
             {title}
             <span
                 className={`h-[1px] inline-block w-0 bg-light
@@ -105,12 +105,12 @@ const NavBar = () => {
                 <Logo className='mt-4 ml-4 sm:m-0 sm:w-[170px]'/>
                 <nav className="text-lg font-primary lg:hidden">
                     <CustomLink href="/" title="Home" className="mx-4" />
-                    <CustomLink href="/about" prefertch={false} title="Our Story" className="mx-4" />
-                    <CustomLink href="/menu" prefertch={false} title="Menu" className="mx-4" />
-                    <CustomLink href="/drinks" prefertch={false} title="Drinks" className="mx-4" />
-                    <CustomLink target="_blank" prefertch={false} href="https://app.gift-it.com.au/buy/warike-limanikkei" title="Gift Cards" className="mx-4" />
-                    <CustomLink href="/contact" prefertch={false} title="Contact" className="mx-4" />
-                    <CustomLink href="/" prefertch={false} title="Reservations" className="mx-4" />
+                    <CustomLink href="/about" prefetch={false} title="Our Story" className="mx-4" />
+                    <CustomLink href="/menu" prefetch={false} title="Menu" className="mx-4" />
+                    <CustomLink href="/drinks" prefetch={false} title="Drinks" className="mx-4" />
+                    <CustomLink target="_blank" prefetch={false} href="https://app.gift-it.com.au/buy/warike-limanikkei" title="Gift Cards" className="mx-4" />
+                    <CustomLink href="/contact" prefetch={false} title="Contact" className="mx-4" />
+                    <CustomLink href="/" prefetch={false} title="Reservations" className="mx-4" />
                 </nav>
                 <button className=" flex-col justify-center items-center hidden px-5 lg:flex" onClick={handleClick}>
                     <span className={`bg-light block transition-all duration-300 ease-out h-0.5 w-10 rounded-sm -translate-y-1 ${isOpen ? 'rotate-45 translate-y-1.5' : '-translate-y-1'}`}></span>

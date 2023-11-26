@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={`${heebo.variable} ${matter.variable} bg-primary text-light font-primary`}>
        
         <NavBar/>
-        <main className='max-w-6xl mx-auto'>
+        <main>
         {children}
         </main>
         <Footer/>
@@ -28,3 +28,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+// max-w-6xl mx-auto
