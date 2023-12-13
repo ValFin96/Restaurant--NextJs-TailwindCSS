@@ -1,15 +1,12 @@
-
-import dynamic from 'next/dynamic'
-const Hero = dynamic(() => import ('../components/Hero'))
-
-
+import { Fragment } from 'react'
+import HeroSlider from '@/components/HeroSlider'
+// import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
-    <>
-    <Hero />
-    </>
-
-
+    <Fragment>
+      {/* <Hero /> */}
+      <HeroSlider />
+    </Fragment>
   )
 }
