@@ -38,14 +38,14 @@ const Branding = () => (
       <Link
         href="https://www.instagram.com/limanikkei_sydney/"
         target="_blank"
-        className="flex gap-2 items-end text-sm">
+        className="flex gap-1 items-end text-sm hover:text-pink-800">
         <InstagramIcon />
         Instagram
       </Link>
       <Link
         href="https://www.facebook.com/limanikkei.sydney"
         target="_blank"
-        className="flex gap-2 items-end text-sm">
+        className="flex gap-1 items-end text-sm hover:text-pink-800">
         <FacebookIcon />
         Facebook
       </Link>
@@ -88,7 +88,7 @@ const QuickLinks = () => {
               <Link
                 href={route}
                 className="flex items-center gap-2 hover:text-pink-800 hover:translate-x-3 transition-all duration-500 ease-in-out">
-                <ChevronRight />
+                <ChevronRight size={18} />
                 {label}
               </Link>
             </li>
@@ -112,7 +112,9 @@ const QuickLinks = () => {
         <div className="grid grid-flow-row gap-1">
           <p>Shop 7/16 Hickson Rd, Dawes Point NSW 2000</p>
           <p>
-            <Link href="tel:93195454" className="flex gap-2 items-center">
+            <Link
+              href="tel:93195454"
+              className="flex gap-2 items-center hover:text-pink-800">
               <PhoneIcon size={12} />
               {`(02) 9319 5454`}
             </Link>
@@ -120,7 +122,7 @@ const QuickLinks = () => {
           <p>
             <Link
               href="mailto:hola@limarestaurant.com.au"
-              className="flex gap-2 items-center">
+              className="flex gap-2 items-center hover:text-pink-800">
               <MailIcon size={12} />
               hola@limarestaurant.com.au
             </Link>
